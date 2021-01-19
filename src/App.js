@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React,{Component}from 'react'
+import Properties from './components/Properties'
+import Header from './components/Header'
+import AddProperty from './components/AddProperty'
+import './App.css'
+import axios from 'axios'
+//import { response } from 'express'
+class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+    properties:[]
+    }
+  }
+componentDidMount(){
+  this.getProperties()
 }
 
-export default App;
+  getProperties = () => {
+    axios.get('/api/properties/').then(response => {
+  this.setState({
+    properties:response.data.reverse()
+  })
+})
+  }
+
+  
+  render(){
+    let homes = this.state.properties.map(element => <Properties data = {element}/>)
+    console.log(this.state)
+  return (
+    <div>
+      <section className = "Header">
+      <Header />
+      </section>
+      <section>
+        <AddProperty getProperties={this.getProperties}/>
+        
+      </section>
+      <section> {homes}</section>
+      
+    </div>
+  )
+}
+}
+
+export default App

@@ -1,0 +1,15 @@
+.properties{
+    height:500px;
+    width:300px;
+}
+.properties img{
+    height:300px;
+    width:300px;
+}
+.Check{
+    padding: 5px;
+    display:inline-block;
+    display: flex;
+    justify-content: space-around;
+    
+}

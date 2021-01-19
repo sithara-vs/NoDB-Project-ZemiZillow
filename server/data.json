@@ -1,0 +1,78 @@
+[
+    {
+       
+        "year": "Year built : 2000",
+        "location": "Location : Hartford,Connecticut",
+        "image": "https://tinyurl.com/ydx73uew",
+        "rate":"Rate: 400000",
+         "favorite": false,
+         "id":1
+        
+    },
+    {
+       
+        "year": "Year built : 2001",
+        "location": "Location : South Windsor,Connecticut",
+        "image": "https://tinyurl.com/y2uf7apb",
+        "rate":"Rate: 402000",
+         "favorite": false,
+         "id":2
+        
+    },
+    {
+       
+        "year": "Year built : 2002",
+        "location": "Location : Bolton,Connecticut",
+        "image": "https://tinyurl.com/y4uew5fw",
+         "favorite": false,
+         "rate":"Rate: 350000",
+         "id":3
+    },
+    {
+        
+        "year": "Year built : 2003",
+        "location": "Location : Glastonbury,Connecticut",
+        "image": "https://tinyurl.com/y4g8bo7u",
+         "favorite": false,
+         "rate":"Rate: 450000",
+         "id":4
+    },
+    {
+        
+        "year": "Year built : 2004",
+        "location": "Location : RockyHill,Connecticut",
+        "image": "https://tinyurl.com/y2m5zmgf",
+         "favorite": false,
+         "rate":"Rate: 325000",
+         "id":5
+    },
+
+    {
+        
+        "year": "Year built : 2005",
+        "location": "Location : Simsbury,Connecticut",
+        "image": "https://tinyurl.com/y3mrwl9z",
+         "favorite": false,
+         "rate":"Rate: 600000",
+         "id":6
+    },
+    {
+       
+        "year": "Year built : 2006",
+        "location": "Location : Southington,Connecticut",
+        "image": "https://tinyurl.com/y2p39yfd",
+         "favorite": false,
+         "rate":"Rate: 500000",
+         "id":7
+    },
+    {
+       
+        "year": "Year built : 2007",
+        "location": "Location : South Windsor,Connecticut",
+        "image": "https://tinyurl.com/y22x3f59",
+         "favorite": false,
+         "rate":"Rate: 450500",
+         "id":8
+    }
+]
+
