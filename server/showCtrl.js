@@ -4,7 +4,15 @@ let id = data.length + 1
   
 module.exports = {
     getProperties: (req,res) => {
-        res.status(200).send(data)
+        const{location}= req.query
+        if(!location){
+            res.status(200).send(data)
+        }else{
+            const filteredProperties = data.filter((element) =>
+            element.location.includes(location))
+            res.status(200).send(filteredProperties)
+        }
+        
     },
     addProperties:(req,res) => {
         const {year,location,image,rate,favorite} = req.body;

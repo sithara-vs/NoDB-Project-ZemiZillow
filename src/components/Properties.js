@@ -7,7 +7,8 @@ class Properties extends Component {
   constructor() {
     super();
     this.state = {
-        favorite:false
+        favorite:false,
+        properties:[]
     }
     };
   
@@ -28,7 +29,7 @@ updateFavoriteStatus = (bool)=> {
 }
 
 
-deleteProperty = () => {
+deleteProperty = (id) => {
     axios.delete(`/api/property/${this.props.data.id}`).then(response => {
   this.setState({
     properties:response.data.reverse()
