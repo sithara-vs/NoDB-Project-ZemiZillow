@@ -8,7 +8,7 @@ class Properties extends Component {
     super();
     this.state = {
         favorite:false,
-        properties:[]
+      
     }
     };
   
@@ -27,15 +27,12 @@ updateFavoriteStatus = (bool)=> {
         })
     })
 }
-
-
-deleteProperty = (id) => {
-    axios.delete(`/api/property/${this.props.data.id}`).then(response => {
+handleChange = (e)=> {
   this.setState({
-    properties:response.data.reverse()
+      [e.target.name]:e.target.value
   })
-})
-  }
+}
+
 
 
 
@@ -44,7 +41,11 @@ deleteProperty = (id) => {
    // console.log(this.updateFavoriteStatus())
     const { year, location, image, rate } = this.props.data;
     return (
-      <article className="properties">
+      
+      <div>
+        
+         
+         <article className="properties">
         <h4>{year}</h4>
         <h4>{location}</h4>
         <h4>{rate}</h4>
@@ -60,9 +61,10 @@ deleteProperty = (id) => {
         </div>
         <br>
         </br>
-        <button onClick={() => this.deleteProperty()}> Remove Property</button>
+        <button onClick={() => this.props.deleteProperty(this.props.data.id)}> Remove Property</button>
        
       </article>
+      </div>
     );
   }
 }

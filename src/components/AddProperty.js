@@ -6,7 +6,11 @@ class AddProperty extends Component{
     constructor(){
         super();
         this.state ={
-
+            year:undefined,
+            rate:undefined,
+            location:"",
+            image:"",
+            favorite:false
         }
     }
     handleChange = (e)=> {
@@ -38,6 +42,9 @@ class AddProperty extends Component{
                 <input name="favorite" placeholder="favorite" onChange={(e) => this.handleChange(e)}  type="checkbox"/>
                 
                 <button onClick={this.addProperty}>Add </button>  
+
+                <input name = "searchLocation" placeholder = 'Search by location'onChange={(e) => this.handleChange(e)}/>
+                <button onClick={()=>this.props.getProperties(this.state.searchLocation)}>Search by Location </button> 
             </span>
         )
     }

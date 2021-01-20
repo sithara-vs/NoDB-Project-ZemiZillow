@@ -51,9 +51,9 @@ module.exports = {
     },
     removeProperty:(req,res)=>{
         const foundIndex = data.findIndex(element => element.id === +req.params.id)
-      
+      console.log(req.params)
         if(foundIndex=== -1){
-            res.status(404).send('Property not found!')
+            res.status(500).send('Property not found!')
             return;
         }
    

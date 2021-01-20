@@ -16,7 +16,14 @@ componentDidMount(){
   this.getProperties()
 }
 
-  getProperties = () => {
+  getProperties = (query) => {
+    if(query){
+      axios.get(`/api/properties?location=${query}`).then(response => {
+        this.setState({
+          properties:response.data
+        })
+      })
+    }else
     axios.get('/api/properties/').then(response => {
   this.setState({
     properties:response.data.reverse()
@@ -24,9 +31,19 @@ componentDidMount(){
 })
   }
 
+
+deleteProperty = (id) => {
+  axios.delete(`/api/property/${id}`).then(response => {
+    console.log(response)
+this.setState({
+  properties:response.data
+})
+})
+}
+
   
   render(){
-    let homes = this.state.properties.map(element => <Properties data = {element}/>)
+    let homes = this.state.properties.map(element => <Properties data = {element} deleteProperty = {this.deleteProperty}/>)
     console.log(this.state)
   return (
     <div>
@@ -34,7 +51,7 @@ componentDidMount(){
       <Header />
       </section>
       <section>
-        <AddProperty getProperties={this.getProperties}/>
+        <AddProperty getProperties={this.getProperties} />
         
       </section>
       <section> {homes}</section>
