@@ -14,6 +14,29 @@ module.exports = {
         }
         
     },
+// module.exports = {
+//     getProperties: (req,res) => {
+//         const{location}= req.query
+//         const{year}= req.query
+//         if(!location&& !year){
+//             res.status(200).send(data)
+//         }else if(location){
+//             const filteredProperties = data.filter((element) =>
+//             element.location.includes(location))
+//             res.status(200).send(filteredProperties)
+//         }
+//         else if(year){
+//             const filteredProperties = data.filter((element) =>
+//             element.year.includes(year))
+//             res.status(200).send(filteredProperties)
+      
+
+//         }
+        
+//     },
+
+
+
     addProperties:(req,res) => {
         const {year,location,image,rate,favorite} = req.body;
         //console.log(body)
@@ -28,6 +51,12 @@ module.exports = {
         data.push(body)
         id++
         res.status(200).send(data)
+
+
+
+        //  if(!body ){
+        //    res.status(404).send(alert('Please Enter the values'))
+        //  }
        
     },
     updateProperty: (req,res) => {

@@ -42,26 +42,26 @@ handleChange = (e)=> {
     const { year, location, image, rate } = this.props.data;
     return (
       
-      <div>
+      <div className="Display">
         
          
          <article className="properties">
-        <h4>{year}</h4>
-        <h4>{location}</h4>
-        <h4>{rate}</h4>
+        <h4>Year Built : {year}</h4>
+        <h4>Location : {location}</h4>
+        <h4>Rate : {rate}</h4>
         <img src={image} alt={year} />
         
         <div className = "Check">
         {this.state.favorite ? (
-                    <button onClick={() => this.updateFavoriteStatus(false)}>Unfavorite</button>
+                    <button onClick={() => this.updateFavoriteStatus(false)}><h4>Unfavorite</h4></button>
                 ) : (
-                    <button onClick={() => this.updateFavoriteStatus(true)}>Favorite</button>
+                    <button onClick={() => this.updateFavoriteStatus(true)}><h4>Favorite</h4></button>
                 )}
         <button> Edit Rate </button>
         </div>
         <br>
         </br>
-        <button onClick={() => this.props.deleteProperty(this.props.data.id)}> Remove Property</button>
+        <button onClick={() => this.props.deleteProperty(this.props.data.id)}> <h4>Remove Property</h4></button>
        
       </article>
       </div>

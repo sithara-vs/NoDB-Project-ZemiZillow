@@ -32,20 +32,27 @@ class AddProperty extends Component{
     render(){
        
         return(
+            <div>
+             
+                <div>
+                <input name = "searchLocation" placeholder = 'Search by location'onChange={(e) => this.handleChange(e)}/>
+                <button onClick={()=>this.props.getProperties(this.state.searchLocation)}><h3>Search </h3></button> 
+                </div>
+
+                
+
+
             <span className = 'Inputs'>
-                <p>Add Property</p>
+                <h3>Add Property</h3>
                 <input name = "year" placeholder = 'year built'onChange={(e) => this.handleChange(e)}/>
                 <input name = "rate" placeholder = 'Rate'onChange={(e) => this.handleChange(e)}/>
                 <input name = "location" placeholder = 'location'onChange={(e) => this.handleChange(e)}/>
                 <input name = "image" placeholder = 'image url'onChange={(e) => this.handleChange(e)}/>
-                <p>Favorite</p>
-                <input name="favorite" placeholder="favorite" onChange={(e) => this.handleChange(e)}  type="checkbox"/>
                 
-                <button onClick={this.addProperty}>Add </button>  
+                <button onClick={this.addProperty}><h4>Add</h4> </button>  
 
-                <input name = "searchLocation" placeholder = 'Search by location'onChange={(e) => this.handleChange(e)}/>
-                <button onClick={()=>this.props.getProperties(this.state.searchLocation)}>Search by Location </button> 
-            </span>
+                 </span>
+            </div>
         )
     }
 }
