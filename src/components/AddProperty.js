@@ -28,7 +28,13 @@ class AddProperty extends Component{
             favorite: this.state.favorite === 'on' ? true : false
         }
         if(year && rate && location ){
-            axios.post("/api/properties",body).then(response => this.props.getProperties())
+            axios.post("/api/properties",body).then(response => this.props.getProperties()).catch(
+                function (error) {
+                  console.log('Show error notification!')
+                  return Promise.reject(error)
+                }
+              )
+
         }else{
             alert("Please input ")
         }
@@ -58,6 +64,7 @@ class AddProperty extends Component{
                 <button onClick={this.addProperty}><h4>Add</h4> </button>  
 
                  </span>
+                
             </div>
         )
     }

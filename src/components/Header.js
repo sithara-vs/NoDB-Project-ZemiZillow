@@ -1,6 +1,7 @@
-import { render } from "@testing-library/react";
+//import { render } from "@testing-library/react";
 import React, { Component } from "react";
 import "./Header.css";
+import Logo from './Logo'
 class Header extends Component {
   constructor() {
     super();
@@ -19,10 +20,14 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="header">
-        <div className="title">
+      <header className="header">
+        
+        <span className="title">
+          <Logo/>
+          <div className="Zillow">
           <h1>Zemi Zillow</h1>
-        </div>
+          </div>
+        </span>
         <div className="Search">
          
         <input name="location" placeholder="Location" onChange={this.handleChange}/>
@@ -34,9 +39,9 @@ class Header extends Component {
         <button onClick={()=>this.props.getProperties(this.state.year)}  ><h3>Search </h3></button> 
     
         </div> 
-               
+           
        
-      </div>
+      </header>
     );
   }
 }

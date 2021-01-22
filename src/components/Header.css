@@ -7,8 +7,14 @@
 }
   .title{
 font-size: large;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
   }
   .Search{
       display:flex;
       justify-content: space-around;
+  }
+  .Zillow{
+padding: 5px;
   }
