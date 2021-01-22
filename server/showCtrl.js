@@ -5,25 +5,35 @@ let id = data.length + 1
 module.exports = {
     getProperties: (req,res) => {
         const{location}= req.query
-        if(!location){
+        const{year} = req.query
+        if(!location && !year){
             res.status(200).send(data)
-        }else{
+        }else if(year){
+            console.log(year)
+            const filteredProperties = data.filter((element)=>
+            element.year === year)
+            res.status(200).send(filteredProperties)
+            
+        }
+        else{
             const filteredProperties = data.filter((element) =>
             element.location.includes(location))
             res.status(200).send(filteredProperties)
+
         }
         
     },
+
 // module.exports = {
 //     getProperties: (req,res) => {
 //         const{location}= req.query
 //         const{year}= req.query
-//         if(!location&& !year){
+//         if(!location && !year){
 //             res.status(200).send(data)
 //         }else if(location){
-//             const filteredProperties = data.filter((element) =>
+//             const filteredPropertiesl = data.filter((element) =>
 //             element.location.includes(location))
-//             res.status(200).send(filteredProperties)
+//             res.status(200).send(filteredPropertiesl)
 //         }
 //         else if(year){
 //             const filteredProperties = data.filter((element) =>

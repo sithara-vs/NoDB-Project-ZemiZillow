@@ -27,17 +27,23 @@ class AddProperty extends Component{
             image,
             favorite: this.state.favorite === 'on' ? true : false
         }
-        axios.post("/api/properties",body).then(response => this.props.getProperties())
+        if(year && rate && location ){
+            axios.post("/api/properties",body).then(response => this.props.getProperties())
+        }else{
+            alert("Please input ")
+        }
+        
+        
     }
     render(){
        
         return(
             <div>
              
-                <div>
+                {/* <div>
                 <input name = "searchLocation" placeholder = 'Search by location'onChange={(e) => this.handleChange(e)}/>
                 <button onClick={()=>this.props.getProperties(this.state.searchLocation)}><h3>Search </h3></button> 
-                </div>
+                </div> */}
 
                 
 

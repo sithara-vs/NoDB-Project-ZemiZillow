@@ -31,6 +31,21 @@ componentDidMount(){
   })
 })
   }
+//   getProperties = (query) => {
+//     if(query){
+//      // axios.get(`/api/properties?${location}=${query}|| ${year}=${year}`).then(response => {
+//       axios.get(`/api/properties?year=${query}`).then(response => {
+//         this.setState({
+//           properties:response.data
+//         })
+//       })
+//     }else
+//     axios.get('/api/properties/').then(response => {
+//   this.setState({
+//     properties:response.data.reverse()
+//   })
+// })
+//   }
 
 
 deleteProperty = (id) => {
@@ -49,7 +64,7 @@ this.setState({
   return (
     <div className = "Style">
       <section className = "Header">
-      <Header />
+      <Header getProperties={this.getProperties} />
       </section>
       <section>
         <AddProperty getProperties={this.getProperties} />

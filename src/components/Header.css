@@ -1,9 +1,14 @@
 .header{
     color: rgb(246, 246, 250);
    display:flex;
-   justify-content: center;
+   justify-content: space-around;
+   
 
 }
- /* .title{
-height:10px
-}  */
+  .title{
+font-size: large;
+  }
+  .Search{
+      display:flex;
+      justify-content: space-around;
+  }
