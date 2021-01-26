@@ -31,12 +31,12 @@ class AddProperty extends Component{
             axios.post("/api/properties",body).then(response => this.props.getProperties()).catch(
                 function (error) {
                   console.log('Show error notification!')
-                  return Promise.reject(error)
+                  throw new Error(error)
                 }
               )
 
         }else{
-            alert("Please input ")
+            alert("Please add details! ")
         }
         
         

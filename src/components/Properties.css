@@ -10,6 +10,7 @@
 .properties img{
     height:300px;
     width:300px;
+    box-shadow: 12px 12px 2px 1px rgba(80, 80, 83, 0.2);
 }
 .Check{
     padding: 5px;
