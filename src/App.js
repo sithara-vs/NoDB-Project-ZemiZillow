@@ -11,14 +11,16 @@ class App extends Component {
     super();
     this.state = {
       properties: [],
-      componentToDisplay: "",
+      showHomes: true,
     };
-    this.setComponentToDisplay = this.setComponentToDisplay.bind(this);
+    this.toggleShowHomes = this.toggleShowHomes.bind(this);
   }
-  setComponentToDisplay(component) {
+  toggleShowHomes() {
+    console.log("hit toggleShowHomes");
     this.setState({
-      componentToDisplay: component,
+      showHomes: !this.state.showHomes,
     });
+    console.log("hit the end of toggleShowHomes", this.state);
   }
 
   componentDidMount() {
@@ -40,26 +42,25 @@ class App extends Component {
         });
       });
     } else {
-      axios.get("/api/properties/").then((response) => {
-        this.setState({
-          properties: response.data.reverse(),
-        });
-      }).catch((error) => {
-        
-        if (error.response) {
-            
+      axios
+        .get("/api/properties/")
+        .then((response) => {
+          this.setState({
+            properties: response.data.reverse(),
+          });
+        })
+        .catch((error) => {
+          if (error.response) {
             console.log(error.response.data);
             console.log(error.response.status);
             console.log(error.response.headers);
-        } else if (error.request) {
-            
+          } else if (error.request) {
             console.log(error.request);
-        } else {
-           
-            console.log('Error', error.message);
-        }
-        console.log(error.config);
-    });
+          } else {
+            console.log("Error", error.message);
+          }
+          console.log(error.config);
+        });
     }
   };
   //   getProperties = (query) => {
@@ -79,14 +80,17 @@ class App extends Component {
   //   }
 
   deleteProperty = (id) => {
-    axios.delete(`/api/property/${id}`).then((response) => {
-      console.log(response);
-      this.setState({
-        properties: response.data,
-      });
-    }).catch((error) => {
-      // Error 
-      if (error.response) {
+    axios
+      .delete(`/api/property/${id}`)
+      .then((response) => {
+        console.log(response);
+        this.setState({
+          properties: response.data,
+        });
+      })
+      .catch((error) => {
+        // Error
+        if (error.response) {
           /*
            * The request was made and the server responded with a
            * status code that falls out of the range of 2xx
@@ -94,28 +98,32 @@ class App extends Component {
           console.log(error.response.data);
           console.log(error.response.status);
           console.log(error.response.headers);
-      } else if (error.request) {
+        } else if (error.request) {
           /*
            * The request was made but no response was received, `error.request`
            * is an instance of XMLHttpRequest in the browser and an instance
            * of http.ClientRequest in Node.js
            */
           console.log(error.request);
-      } else {
+        } else {
           // Something happened in setting up the request and triggered an Error
-          console.log('Error', error.message);
-      }
-      console.log(error.config);
-  });
+          console.log("Error", error.message);
+        }
+        console.log(error.config);
+      });
   };
 
   render() {
-    //  let displayComponent = this.state.componentToDisplay === "add" ? <AddProperty/>
-
     let homes = this.state.properties.map((element) => (
       <Properties data={element} deleteProperty={this.deleteProperty} />
     ));
-    console.log(this.state);
+    // console.log(this.state);
+    let displayComponent =
+      this.state.showHomes === true ? (
+        <article className="homes"> {homes}</article>
+      ) : (
+        <AddProperty getProperties={this.getProperties} />
+      );
 
     return (
       <div className="Style">
@@ -123,10 +131,24 @@ class App extends Component {
           <Header key="header" getProperties={this.getProperties} />
         </header>
         <section>
-          {/* {displayComponent} */}
-          <AddProperty getProperties={this.getProperties} />
+          <button onClick={() => this.toggleShowHomes()}>
+            {this.state.showHomes === true ? (
+              <h3>Add Property</h3>
+            ) : (
+              <h3>Show Homes</h3>
+            )}
+          </button>
+          <br></br>
+          <br></br>
+          <br></br>
         </section>
-        <article className="homes"> {homes}</article>
+        {displayComponent}
+
+        {/* <AddProperty key="addProp" getProperties={this.getProperties} setComponentToDisplay={this.setComponentToDisplay}/> */}
+
+        {/* </section> */}
+
+        {/* <article className="homes"> {homes}</article> */}
         <footer>
           <Footer />
         </footer>

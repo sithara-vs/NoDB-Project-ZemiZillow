@@ -17,6 +17,8 @@ class Header extends Component {
  })
   }
 
+ 
+
   render() {
     return (
       <header className="header">
@@ -36,6 +38,11 @@ class Header extends Component {
         <input name="year" placeholder="Year" onChange={this.handleChange}/>
 
         <button onClick={()=>this.props.getProperties(this.state.year,"year")}  ><h3>Search </h3></button> 
+        
+        
+       
+
+
     
         </div> 
            

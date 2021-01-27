@@ -64,7 +64,8 @@ class AddProperty extends Component{
                 <button onClick={this.addProperty}><h4>Add</h4> </button>  
 
                  </span>
-                
+                 {/* <button onClick={() => this.props.setComponentToDisplay("addproperty")}>AddProperty-conditional</button>
+                 */}
             </div>
         )
     }

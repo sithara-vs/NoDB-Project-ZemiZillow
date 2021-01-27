@@ -73,11 +73,12 @@ handleChange = (e)=> {
                 ) : (
                     <button onClick={() => this.updateFavoriteStatus(true)}><h4>Favorite</h4></button>
                 )}
-        <button> Edit Rate </button>
+                 <button onClick={() => this.props.deleteProperty(this.props.data.id)}> <h4>Remove Property</h4></button>
+        {/* <button> Edit Rate </button> */}
         </div>
         <br>
         </br>
-        <button onClick={() => this.props.deleteProperty(this.props.data.id)}> <h4>Remove Property</h4></button>
+        {/* <button onClick={() => this.props.deleteProperty(this.props.data.id)}> <h4>Remove Property</h4></button> */}
        
       </article>
       </div>
