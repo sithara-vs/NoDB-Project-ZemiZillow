@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/zillow-app/static/css/main.2c357cac.chunk.css",
+    "main.js": "/zillow-app/static/js/main.7e4e92e8.chunk.js",
+    "main.js.map": "/zillow-app/static/js/main.7e4e92e8.chunk.js.map",
+    "runtime-main.js": "/zillow-app/static/js/runtime-main.fe531dd7.js",
+    "runtime-main.js.map": "/zillow-app/static/js/runtime-main.fe531dd7.js.map",
+    "static/js/2.f8608df3.chunk.js": "/zillow-app/static/js/2.f8608df3.chunk.js",
+    "static/js/2.f8608df3.chunk.js.map": "/zillow-app/static/js/2.f8608df3.chunk.js.map",
+    "static/js/3.f4a616ae.chunk.js": "/zillow-app/static/js/3.f4a616ae.chunk.js",
+    "static/js/3.f4a616ae.chunk.js.map": "/zillow-app/static/js/3.f4a616ae.chunk.js.map",
+    "index.html": "/zillow-app/index.html",
+    "static/css/main.2c357cac.chunk.css.map": "/zillow-app/static/css/main.2c357cac.chunk.css.map",
+    "static/js/2.f8608df3.chunk.js.LICENSE.txt": "/zillow-app/static/js/2.f8608df3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fe531dd7.js",
+    "static/js/2.f8608df3.chunk.js",
+    "static/css/main.2c357cac.chunk.css",
+    "static/js/main.7e4e92e8.chunk.js"
+  ]
+}
